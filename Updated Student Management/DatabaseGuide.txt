@@ -1,0 +1,43 @@
+PEN COMMAND PROMPT 
+
+TYPE: mysql -u root -p
+
+
+
+-- Create the database
+CREATE DATABASE IF NOT EXISTS studentsdb;
+
+-- Use the database
+USE studentsdb;
+
+-- Create the students table
+CREATE TABLE IF NOT EXISTS students (
+    ID INTEGER NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(50),
+    Surname VARCHAR(50),
+    Age INTEGER,
+    Gender VARCHAR(6),
+    Course VARCHAR(50),
+    Started VARCHAR(25),
+    Graduation VARCHAR(25),
+    PRIMARY KEY (ID)
+);
+
+-- Create the courses table
+CREATE TABLE IF NOT EXISTS courses (
+    ID INTEGER NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(50),
+    Faculty VARCHAR(50),
+    Duration INTEGER,
+    Attendees INTEGER,
+    PRIMARY KEY (ID)
+);
+
+-- Create the faculties table
+CREATE TABLE IF NOT EXISTS faculties (
+    ID INTEGER NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(50),
+    Courses INTEGER,
+    Attendees INTEGER,
+    PRIMARY KEY (ID)
+);
